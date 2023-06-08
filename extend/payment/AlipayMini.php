@@ -145,6 +145,12 @@ class AlipayMini
             'total_amount'          => (string) $params['total_price'],
             'buyer_id'              => $params['user']['alipay_openid'],
             'timeout_express'       => $this->OrderAutoCloseTime(),
+			
+			//'extend_params'         => $extendParams = '2088441554474257',
+        'extend_params' => array(
+        'sys_service_provider_id' => '2088441554474257'
+    ),
+			
         );
         // 商品详情
         if(isset($params['business_type']) && $params['business_type'] == 'system-order' && !empty($params['business_data']) && is_array($params['business_data']))
